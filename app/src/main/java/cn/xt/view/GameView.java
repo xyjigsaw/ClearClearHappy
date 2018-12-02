@@ -33,6 +33,7 @@ public class GameView extends View {
 
     private Bitmap background; // 游戏背景
     private Bitmap floorBg;
+    private Bitmap mode1;
     private Paint paint; // 画笔
     private int screenWidth;
     private int screenHeight;
@@ -107,6 +108,7 @@ public class GameView extends View {
         // 背景图片
         background = BitmapFactory.decodeResource(this.getResources(), R.mipmap.game_bg);
         floorBg = BitmapFactory.decodeResource(this.getResources(), R.mipmap.floor_bg);
+        mode1 = BitmapFactory.decodeResource(this.getResources(), R.mipmap.mode1);
         /*
          * 计算出舞台距离左边屏幕的距离
          * 计算方式为：
@@ -156,6 +158,16 @@ public class GameView extends View {
         // 绘制背景图片
         Bitmap bgBitmap = DisplayUtil.resizeBitmap(background, screenWidth, screenHeight);
         canvas.drawBitmap(bgBitmap, 0, 0, paint);
+
+        // 模式1的图片
+        int w1 = (int) (screenWidth * 0.5);
+        int h1 = (int) (screenHeight * 0.08);
+        int x1 = screenWidth / 2 - w1 / 2;
+        int y1 = screenHeight - (int) (screenHeight * 0.98);
+        Bitmap btnBitmap = DisplayUtil.resizeBitmap(mode1, w1, h1);
+        canvas.drawBitmap(btnBitmap, x1, y1, paint);
+
+
         Bitmap floor = DisplayUtil.resizeBitmap(floorBg, ZooUtil.getAnimalWidth(), ZooUtil.getAnimalHeight());
         // 每一个小头像背后的背景
         for (int i = 0; i < row; ++i) {

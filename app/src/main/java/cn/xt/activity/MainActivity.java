@@ -40,6 +40,13 @@ public class MainActivity extends AppCompatActivity implements MainViewInterface
         stopMusic();
     }
 
+    public void startGameMode2() {
+        Intent intent = new Intent();
+        intent.setClass(this.getBaseContext(), GameActivity.class);
+        startActivity(intent);
+        stopMusic();
+    }
+
 
     private void playMusic() {
         media = MediaPlayer.create(getBaseContext(), R.raw.bg_main);
