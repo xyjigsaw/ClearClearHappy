@@ -3,6 +3,7 @@ package cn.xt.utils;
 import android.content.res.Resources;
 import android.graphics.BitmapFactory;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,11 +20,9 @@ public class ZooUtil {
     private static int animalWidth = 0;
     private static int animalHeight = 0;
     private static Map<Integer, FlashBitmap> map = new HashMap<>();
-    private static FlashBitmap ali = new FlashBitmap(); // 阿狸
-    private static FlashBitmap xj = new FlashBitmap(); // 小鸡
-    private static FlashBitmap gx = new FlashBitmap(); // 狗熊
-    private static FlashBitmap qw = new FlashBitmap(); // 青蛙
-    private static FlashBitmap hm = new FlashBitmap(); // 河马
+    private static FlashBitmap img[][] = {{new FlashBitmap(),new FlashBitmap(),new FlashBitmap(),new FlashBitmap(),new FlashBitmap()}};
+
+
 
     /**
      * 初始化动物头像数据
@@ -34,27 +33,23 @@ public class ZooUtil {
     public static void initZooData(int width, int height, Resources res) {
         animalWidth = width;
         animalHeight = height;
-        // 初始化动物图像
-        ali.setId(1);
-        ali.setSize(width, height);
-        ali.setBitmap(BitmapFactory.decodeResource(res, R.mipmap.ali));
-        xj.setId(2);
-        xj.setSize(width, height);
-        xj.setBitmap(BitmapFactory.decodeResource(res, R.mipmap.xj));
-        gx.setId(3);
-        gx.setSize(width, height);
-        gx.setBitmap(BitmapFactory.decodeResource(res, R.mipmap.gx1));
-        qw.setId(4);
-        qw.setSize(width, height);
-        qw.setBitmap(BitmapFactory.decodeResource(res, R.mipmap.qw));
-        hm.setId(5);
-        hm.setSize(width, height);
-        hm.setBitmap(BitmapFactory.decodeResource(res, R.mipmap.hm));
-        map.put(ali.getId(), ali);
-        map.put(xj.getId(), xj);
-        map.put(gx.getId(), gx);
-        map.put(qw.getId(), qw);
-        map.put(hm.getId(), hm);
+
+    /**
+     * 初始化汉字图像
+     * @return
+     */
+        for(int i=0;i<img.length;i++){
+            for(int j=0;j<img[i].length;j++){
+                img[i][j].setId((i*img[i].length+j+1));
+                img[i][j].setSize(width,height);
+                String temp = "c" + (i+1);
+                temp += (j+1);
+                int tempID = getResId(temp,R.mipmap.class);
+                img[i][j].setBitmap(BitmapFactory.decodeResource(res,tempID));
+                map.put(img[i][j].getId(),img[i][j]);
+                System.out.print("cdscdsc");
+            }
+        }
     }
 
     /**
@@ -76,6 +71,16 @@ public class ZooUtil {
                 prepIndex.remove(0);
             }
             return map.get(index).clone();
+        }
+    }
+
+    public static int getResId(String variableName, Class<?> c) {
+        try {
+            Field idField = c.getDeclaredField(variableName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
         }
     }
 

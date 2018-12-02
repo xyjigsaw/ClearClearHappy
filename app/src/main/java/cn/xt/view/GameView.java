@@ -103,7 +103,7 @@ public class GameView extends View {
         // int ave = screenWidth / (row + 2); // 将屏幕宽度分为 row + 2 等份
         int ave = 0;
         int size = (screenWidth - ave * 2) / row; // 其它两分为：舞台距离屏幕左右边的像素
-        ZooUtil.initZooData(size, size, this.getResources()); // 初始化动物头像数据
+        ZooUtil.initZooData(size, size, this.getResources());                                           // 初始化动物头像数据
         // 背景图片
         background = BitmapFactory.decodeResource(this.getResources(), R.mipmap.game_bg);
         floorBg = BitmapFactory.decodeResource(this.getResources(), R.mipmap.floor_bg);
