@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import cn.xt.utils.DisplayUtil;
 
 /**
- * Created by 小天 on 2018/1/12.
+ * Created by SuperYang88 on 2018/1/12.
  */
 public class FlashBitmap implements Cloneable {
     private volatile transient int id;

@@ -1,7 +1,7 @@
 package cn.xt.interfaces;
 
 /**
- * Created by 小天 on 2018/1/12.
+ * Created by SuperYang88 on 2018/1/12.
  */
 
 public interface MainViewInterface {

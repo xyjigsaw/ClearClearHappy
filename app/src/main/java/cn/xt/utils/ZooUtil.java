@@ -13,7 +13,7 @@ import cn.xt.activity.R;
 import cn.xt.model.FlashBitmap;
 
 /**
- * Created by 小天 on 2018/1/16.
+ * Created by SuperYang88 on 2018/1/16.
  */
 public class ZooUtil {
     // 动物头像的宽和高
