@@ -11,7 +11,7 @@ import cn.xt.activity.R;
 import cn.xt.model.FlashBitmap;
 
 /**
- * Created by 小天 on 2018/1/14.
+ * Created by SuperYang88 on 2018/1/14.
  */
 
 public class StageUtil {
