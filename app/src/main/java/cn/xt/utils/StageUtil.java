@@ -327,5 +327,4 @@ public class StageUtil {
         }
         return boomBitmap;
     }
-
 }
