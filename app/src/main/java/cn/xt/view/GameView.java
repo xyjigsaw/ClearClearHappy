@@ -198,9 +198,10 @@ public class GameView extends View {
         paint.setColor(Color.WHITE);
         paint.setTextSize(32);
         paint.setTypeface(Typeface.create(Typeface.DEFAULT_BOLD , Typeface.BOLD));
-        canvas.drawText("当前关卡：" + level, 10, StageUtil.getStage().getHeight() + 70, paint);
-        canvas.drawText("当前得分：" + currScore, 10, StageUtil.getStage().getHeight() + 120, paint);
-        canvas.drawText("通关分数：" + accessScore[level - 1], 10, StageUtil.getStage().getHeight() + 170, paint);
+        canvas.drawText("当前关卡：" + level, 50, 40, paint);
+        canvas.drawText("当前得分：" + currScore, 300, 40, paint);
+        //方块部分的高度为StageUtil.getStage().getHeight()
+        canvas.drawText("通关分数：" + accessScore[level - 1], 550, 40, paint);
         // 刷新屏幕的频率(理论上小于25，人就会感觉物体是在移动)
         postInvalidateDelayed(1);
     }
