@@ -8,4 +8,5 @@ public interface MainViewInterface {
 
     void startGame();
     // void onClick();
+    void startGameMode2();
 }

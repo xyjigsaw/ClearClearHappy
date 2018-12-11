@@ -40,9 +40,10 @@ public class MainActivity extends AppCompatActivity implements MainViewInterface
         stopMusic();
     }
 
+    @Override
     public void startGameMode2() {
         Intent intent = new Intent();
-        intent.setClass(this.getBaseContext(), GameActivity.class);
+        intent.setClass(this.getBaseContext(), LinkupActivity.class);
         startActivity(intent);
         stopMusic();
     }

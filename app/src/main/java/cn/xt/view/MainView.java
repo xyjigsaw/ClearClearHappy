@@ -86,7 +86,7 @@ public class MainView extends View {
                     listener.startGame();
                 }else if(ex > x1 && ex < (x1 + w1)&& ey > y1 && ey < (y1 + h1)) {//第二个触发状态
                     // Toast.makeText(MainView.this.getContext(), "点击开始", Toast.LENGTH_SHORT).show();
-                    listener.startGame();//模式需要改
+                    listener.startGameMode2();//模式需要改
                 }
                 break;
             // 移动
