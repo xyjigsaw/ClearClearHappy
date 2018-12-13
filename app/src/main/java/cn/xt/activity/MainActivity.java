@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements MainViewInterface
     @Override
     public void startGameMode2() {
         Intent intent = new Intent();
-        intent.setClass(this.getBaseContext(), LinkupActivity.class);
+        intent.setClass(this.getBaseContext(), Mode2Activity.class); //进入模式2  Very Important
         startActivity(intent);
         stopMusic();
     }

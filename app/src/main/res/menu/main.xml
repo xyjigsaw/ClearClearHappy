@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_exit"
+        android:orderInCategory="100"
+
+        android:title="222"/>
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="100"
+
+        android:title="333"/>
+
+</menu>
