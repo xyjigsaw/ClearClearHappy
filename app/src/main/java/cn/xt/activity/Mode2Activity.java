@@ -121,7 +121,7 @@ public class Mode2Activity extends Activity
 			Mode2Activity.this.exit();
 			Mode2Activity.this.finish();
 		} else if (item.getItemId() == R.id.action_about) {
-			Toast.makeText(Mode2Activity.this, "本游戏由MH童鞋开发制作", Toast.LENGTH_LONG).show();
+			Toast.makeText(Mode2Activity.this, "本游戏由XY童鞋开发制作", Toast.LENGTH_LONG).show();
 		}
 		return super.onOptionsItemSelected(item);
 	}
