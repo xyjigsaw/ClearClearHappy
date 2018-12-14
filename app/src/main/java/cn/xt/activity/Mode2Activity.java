@@ -1,5 +1,4 @@
 package cn.xt.activity;
-
 import cn.xt.mh.view.*;
 import android.media.MediaPlayer;
 import android.os.Bundle;
