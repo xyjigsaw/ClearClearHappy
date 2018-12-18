@@ -15,8 +15,8 @@ import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.*;
-
 import cn.xt.mh.view.GameView;
+
 
 @SuppressLint("HandlerLeak")
 public class Mode2Activity extends Activity
@@ -88,7 +88,7 @@ public class Mode2Activity extends Activity
 		// 获取需要被添加控件的布局
 		final RelativeLayout layout =  (RelativeLayout)inflater.inflate(R.layout.activity_linkup, null);
 		int screeenWidth = getScreenWidth();
-		int minus = 10;
+		int minus = 5;
 		int width = screeenWidth - 2 * minus;
 		gameView = new cn.xt.mh.view.GameView(this, width);
 		RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(width, width);

@@ -36,17 +36,17 @@ public class GameView extends BoardView {
 	/**
 	 * 能够使用打乱工具的次数
 	 */
-	private int disruptTotalNum = 3;
+	private int disruptTotalNum = 10;
 	private int disruptLeftNum;
 	/**
 	 * 能够使用提示工具的次数
 	 */
-	private int tipTotalNum = 3;
+	private int tipTotalNum = 10;
 	private int tipLeftNum;
 	/**
-	 * 第一关游戏总时间，为100s
+	 * 第一关游戏总时间，为60s
 	 */
-	private int totalTime = 100;
+	private int totalTime = 60;
 	private int leftTime;
 
 	public int getDisruptTotalNum() {

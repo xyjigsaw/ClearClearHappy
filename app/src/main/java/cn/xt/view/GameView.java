@@ -1,6 +1,7 @@
 package cn.xt.view;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -14,6 +15,7 @@ import android.os.Message;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.HashMap;
@@ -165,7 +167,7 @@ public class GameView extends View {
         int x1 = screenWidth / 2 - w1 / 2;
         int y1 = screenHeight - (int) (screenHeight * 0.98);
         Bitmap btnBitmap = DisplayUtil.resizeBitmap(mode1, w1, h1);
-        canvas.drawBitmap(btnBitmap, x1, y1, paint);
+        //canvas.drawBitmap(btnBitmap, x1, y1, paint);
 
 
         Bitmap floor = DisplayUtil.resizeBitmap(floorBg, ZooUtil.getAnimalWidth(), ZooUtil.getAnimalHeight());
@@ -195,13 +197,14 @@ public class GameView extends View {
             clearBitmap();
             load = false;
         }
-        paint.setColor(Color.WHITE);
-        paint.setTextSize(32);
-        paint.setTypeface(Typeface.create(Typeface.DEFAULT_BOLD , Typeface.BOLD));
-        canvas.drawText("当前关卡：" + level, 50, 40, paint);
-        canvas.drawText("当前得分：" + currScore, 300, 40, paint);
+        paint.setColor(Color.MAGENTA);
+        paint.setTextSize(50);
+        Typeface typeface=Typeface.defaultFromStyle(Typeface.BOLD);
+        paint.setTypeface(typeface);//设置字体类型
+        canvas.drawText("当前关卡:" + level, 60, 80, paint);
+        canvas.drawText("当前得分:" + currScore, 340, 80, paint);
         //方块部分的高度为StageUtil.getStage().getHeight()
-        canvas.drawText("通关分数：" + accessScore[level - 1], 550, 40, paint);
+        canvas.drawText("通关分数:" + accessScore[level - 1], 600, 80, paint);
         // 刷新屏幕的频率(理论上小于25，人就会感觉物体是在移动)
         postInvalidateDelayed(1);
     }
