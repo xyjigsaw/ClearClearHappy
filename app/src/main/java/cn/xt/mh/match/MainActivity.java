@@ -123,7 +123,7 @@ public class MainActivity extends Activity
 			MainActivity.this.exit();
 			MainActivity.this.finish();
 		} else if (item.getItemId() == R.id.action_about) {
-			Toast.makeText(MainActivity.this, "本游戏由MH童鞋开发制作", Toast.LENGTH_LONG).show();
+			Toast.makeText(MainActivity.this, "本游戏由XYZ开发小组童鞋开发制作", Toast.LENGTH_LONG).show();
 		}
 		return super.onOptionsItemSelected(item);
 	}
